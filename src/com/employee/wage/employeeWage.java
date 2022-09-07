@@ -2,7 +2,7 @@ package com.employee.wage;
 
 import java.util.Random;
 
-public class employeeWage {
+public class EmployeeWage {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation .");
@@ -17,9 +17,12 @@ public class employeeWage {
 		int days = 1;
 
 		Random random = new Random();
-		int randomNum = random.nextInt(3);
+		
 
 		while (days != 20 && workingHoursperMonth != 100) {
+			
+			int randomNum = random.nextInt(3);
+			
 			switch (randomNum) {
 			case 0:
 				System.out.println("Employee is Absent");
