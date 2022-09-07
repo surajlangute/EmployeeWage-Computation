@@ -13,12 +13,13 @@ public class employeeWage {
 		int salary = 0;
 		int monthlySalary = 0;
 		int workingDaysPerMonth = 20;
+		int workingHoursperMonth = 0;
+		int days = 1;
 
 		Random random = new Random();
 		int randomNum = random.nextInt(3);
 
-		for (int i = 1; i <= workingDaysPerMonth; i++) {
-
+		while (days != 20 && workingHoursperMonth != 100) {
 			switch (randomNum) {
 			case 0:
 				System.out.println("Employee is Absent");
@@ -27,18 +28,20 @@ public class employeeWage {
 			case 1:
 				System.out.println("Employee is Present");
 				salary = wagePerHour * fullDayHours;
+				workingHoursperMonth = workingHoursperMonth + fullDayHours;
 				break;
 
 			case 2:
 				System.out.println("Employee is Present for Halfday");
 				salary = wagePerHour * halfDayHours;
+				workingHoursperMonth = workingHoursperMonth + halfDayHours;
 				break;
 			}
 			monthlySalary = monthlySalary + salary;
-			System.out.println("Employees salary for day" + i + "  is : " + salary);
-
+			System.out.println("day " + days + " salary is : " + salary);
+			days++;
 		}
-		
+
 		System.out.print("Employees monthly salary is : " + monthlySalary);
 
 	}
